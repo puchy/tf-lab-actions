@@ -70,3 +70,16 @@ jobs:
           else
             echo "::notice file=${{ github.event.inputs.test_file }}::Terraform test file not found."
           fi
+    
+      # Create PR if needed
+    #   - name: Create Pull Request
+    #     uses: peter-evans/create-pull-request@v7
+    #     if: always()
+    #     with:
+    #       title: "chore(pre-commit): auto-format code on ${{ steps.ref.outputs.name }}"
+    #       commit-message: "chore(pre-commit): auto-format code"
+    #       body: Reformat code according to pre-defined rules
+    #       branch: pre-commit-run/${{ steps.ref.outputs.name }}
+    #       base: ${{ steps.ref.outputs.name }}
+    #       delete-branch: true
+    #       labels: bot
