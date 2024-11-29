@@ -32,7 +32,7 @@ jobs:
 
       - name: Install terraform-docs
         run: |
-          wget -nv -O https://github.com/terraform-docs/terraform-docs/releases/download/${TFDOCS_VERSION}/terraform-docs-${TFDOCS_VERSION}-linux-amd64.tar.gz | tar -zxvf - -C $HOME/bin terraform-docs
+          wget -nv -O - https://github.com/terraform-docs/terraform-docs/releases/download/${TFDOCS_VERSION}/terraform-docs-${TFDOCS_VERSION}-linux-amd64.tar.gz | tar -zxvf - -C $HOME/bin terraform-docs
           echo "$HOME/bin" >> $GITHUB_PATH
 
       - name: Install pre-commit
