@@ -79,10 +79,10 @@ jobs:
 
       - name: Terraform test
         run: |
-          if [ -f "tests/${{ github.event.inputs.test_file }}" ]; then
-            terraform test -filter=tests/${{ github.event.inputs.test_file }}
+          if [ -f "tests/${{ inputs.test_file }}" ]; then
+            terraform test -filter=tests/${{ inputs.test_file }}
           else
-            echo "::notice file=${{ github.event.inputs.test_file }}::Terraform test file not found."
+            echo "::notice file=${{ inputs.test_file }}::Terraform test file not found."
           fi
     
       # Create PR if needed
